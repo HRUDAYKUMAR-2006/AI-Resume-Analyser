@@ -5,8 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Permissions needed for both GitHub Pages and gh-pages branch push
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,21 +22,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Build application
+      - name: Build Application
         run: npm run build
 
+      - name: Create 404.html for SPA Routing
+        run: cp dist/index.html dist/404.html
+
+      # Deployment Path 1: Deploy to gh-pages branch (works with "Deploy from a branch")
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+
+      # Deployment Path 2: Deploy to GitHub Pages environment (works with "GitHub Actions" source)
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
