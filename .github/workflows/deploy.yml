@@ -1,15 +1,12 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to gh-pages
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
-# Permissions needed for both GitHub Pages and gh-pages branch push
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: 'pages'
@@ -17,9 +14,6 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Code
@@ -39,7 +33,6 @@ jobs:
       - name: Create 404.html for SPA Routing
         run: cp dist/index.html dist/404.html
 
-      # Deployment Path 1: Deploy to gh-pages branch (works with "Deploy from a branch")
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -47,16 +40,3 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           force_orphan: true
-
-      # Deployment Path 2: Deploy to GitHub Pages environment (works with "GitHub Actions" source)
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
