@@ -146,4 +146,20 @@ export interface User {
   isAuthenticated: boolean;
 }
 
-export type ActiveTab = 'analyzer' | 'paths' | 'courses' | 'builder' | 'jobs' | 'login';
+export interface InterviewQuestion {
+  id: string;
+  title: string;
+  difficulty: 'Easy' | 'Medium' | 'Hard';
+  category: string;
+  pathId: string;
+  prompt: string;
+  examples: { input: string; output: string; explanation?: string }[];
+  constraints: string[];
+  starterCode: { [lang: string]: string };
+  solutionCode: { [lang: string]: string };
+  timeComplexity: string;
+  spaceComplexity: string;
+  hints: string[];
+}
+
+export type ActiveTab = 'analyzer' | 'paths' | 'courses' | 'builder' | 'jobs' | 'interview' | 'login';

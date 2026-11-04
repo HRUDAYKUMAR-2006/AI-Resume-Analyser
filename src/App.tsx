@@ -12,6 +12,7 @@ import { DevelopmentPathsTab } from './components/DevelopmentPathsTab';
 import { CoursesTab } from './components/CoursesTab';
 import { ResumeBuilderTab } from './components/ResumeBuilderTab';
 import { JobApplyTab } from './components/JobApplyTab';
+import { InterviewTab } from './components/InterviewTab';
 import { AuthModal } from './components/AuthModal';
 import { AuthPage } from './components/AuthPage';
 
@@ -176,6 +177,16 @@ export function App() {
             setActiveTab={setActiveTab}
             user={user}
             onRequireAuth={handleRequireAuth}
+          />
+        )}
+
+        {activeTab === 'interview' && (
+          <InterviewTab
+            resume={resume}
+            score={score}
+            selectedPathId={selectedPathId}
+            onUpdateResume={handleUpdateResume}
+            setActiveTab={setActiveTab}
           />
         )}
 

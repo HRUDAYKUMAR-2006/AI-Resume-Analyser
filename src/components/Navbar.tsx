@@ -13,7 +13,8 @@ import {
   User as UserIcon,
   LogIn,
   LogOut,
-  ShieldCheck
+  ShieldCheck,
+  Code2
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -57,6 +58,12 @@ export const Navbar: React.FC<NavbarProps> = ({
       label: 'Recommended Courses', 
       icon: <GraduationCap className="w-4 h-4" />,
       badge: `${completedCoursesCount}/${totalCoursesCount}`
+    },
+    { 
+      id: 'interview', 
+      label: 'Mock Interview Simulator', 
+      icon: <Code2 className="w-4 h-4" />,
+      badge: 'AI'
     },
     { 
       id: 'builder', 

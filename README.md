@@ -54,7 +54,13 @@ Personalized roadmaps tailored to market demand, salary benchmarks, and open job
 - **AI Tailored Cover Letter Generator**: Automatically crafts cover letters tuned to your actual projects and target job specifications.
 - **Application Tracking**: Tracks pipeline status from *Submitted* to *Under Review* and *Interview Scheduled*.
 
-### 7. 🔐 Candidate Auth & Access Control
+### 7. 🧠 AI Technical & DSA Mock Interview Simulator
+- **FAANG-Caliber Problem Workspace**: Code solutions in **Python, JavaScript, Java, or C++**.
+- **Big-O Complexity Validator**: Validates runtime asymptotic time and space bounds.
+- **Credential Auto-Injection**: Solving interview questions auto-injects verified FAANG interview badges into your resume!
+- **Dynamic Salary & Compensation Predictor**: Calculates projected salary ranges across US, India, and Global Remote markets based on your live ATS score.
+
+### 8. 🔐 Candidate Auth & Access Control
 - Account access system for tracking course enrollments, earning verified badges, and submitting real job applications.
 - Includes fast 1-click demo login options for seamless evaluation.
 
