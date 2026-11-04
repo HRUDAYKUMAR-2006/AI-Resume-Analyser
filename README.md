@@ -1,10 +1,13 @@
 # AI Resume Analyser & Career Catalyst 🚀
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://hrudaykumar-2006.github.io/AI-Resume-Analyser/)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> 🌐 **Live Web Application:** [https://hrudaykumar-2006.github.io/AI-Resume-Analyser/](https://hrudaykumar-2006.github.io/AI-Resume-Analyser/)
 
 An end-to-end AI-powered Resume Intelligence platform built for students, fresh graduates, and software engineers. It analyses resumes for ATS compliance, visualizes career development paths across 6 tech domains, performs ROI and score analysis for recommended courses, mandates a definitive **DSA Capstone Course**, auto-injects verified credentials and projects into an interactive resume builder, and enables **1-Click Direct Job Applications**.
 
